@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "LearningAngular"
+    }
+  },
+  "defaultProject": "LearningAngular",
+  "cli": {
+    "analytics": "c0c6484c-d6ac-4be2-bfd8-22ca2643d382"
+  }
 }
