@@ -1,29 +1,34 @@
+import {Content} from './content-interface';
+import { Component } from '@angular/core';
 
-
-class ContentList{
+export class ContentList{
   private _items: Content[];
 
 
-  constructor(items: []) {
-    this._items = items;
+  constructor() {
+    this._items = [];
   }
 
 
-  get items(): [] {
+  get items(): Content[] {
     return this._items;
   }
 
 addContent(content: Content): void{
-    this._items.concat(content);
+    this._items.push(content);
   }
 
-  amountInArray(Array: []): number{
-    return Array.length;
+  amountInArray(): number{
+    return this._items.length;
 
   }
 
-  arrayOutputById(id: number, array: []): void{
-    //change this to the html
-    console.log(array[id]);
+  arrayOutputById(id: number): string {
+    return '<h1>' + this._items[id].title + '</h1>' +
+      '<h2> Author: ' + this._items[id].author + '</h2>' +
+      '<h2> Type: ' + this._items[id].type + '</h2>' +
+      '<h2> Tags: ' + this._items[id].tags + '</h2>' +
+      '<p>' + this._items[id].body + '</p>' +
+      '<img src="' + this._items[id].imgUrl + '" alt="picture" width="250" height="250">';
   }
 }
