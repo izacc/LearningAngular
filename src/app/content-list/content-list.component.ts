@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Content} from "../helper-files/content-interface";
+import {Content} from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -53,9 +53,12 @@ export class ContentListComponent implements OnInit {
     type: 'Flowers',
     body: 'These are tulips(i think)'
   };
-
   constructor() {
     this.contentList.push(this.item1, this.item2, this.item3, this.item4, this.item5);
+  }
+
+  public idPrint(content: Content): void{
+    console.log(content.id);
   }
 
   ngOnInit(): void {
