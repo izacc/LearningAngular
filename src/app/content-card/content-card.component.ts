@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ContentList} from '../helper-files/content-list';
 import {Content} from '../helper-files/content-interface';
 
 
@@ -10,7 +9,7 @@ import {Content} from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.css'],
 })
 export class ContentCardComponent implements OnInit {
-  public contentList = new ContentList();
+ // public contentList = new ContentList();
   outputHTML: string;
   item1: Content = {
     id: 0,
@@ -42,10 +41,10 @@ export class ContentCardComponent implements OnInit {
 
 
 constructor() {
-  this.contentList.addContent(this.item1);
-  this.contentList.addContent(this.item2);
-  this.contentList.addContent(this.item3);
-  this.outputHTML = this.contentList.arrayOutputById(0) + this.contentList.arrayOutputById(1) + this.contentList.arrayOutputById(2);
+ // this.contentList.addContent(this.item1);
+  //this.contentList.addContent(this.item2);
+ // this.contentList.addContent(this.item3);
+  //this.outputHTML = this.contentList.arrayOutputById(0) + this.contentList.arrayOutputById(1) + this.contentList.arrayOutputById(2);
 
   }
 
