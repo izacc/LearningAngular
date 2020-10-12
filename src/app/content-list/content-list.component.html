@@ -1,4 +1,7 @@
-<div class="div1" *ngFor="let content of contentList">
+<div class="div1" *ngFor="let content of contentList; let last = last"
+     [ngClass]="{'last-child': last}">
+
+
   <ul title="Content Items">
     <li>
       <h1>{{content.title}}</h1>
