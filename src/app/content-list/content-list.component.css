@@ -1,0 +1,42 @@
+.div1{
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid cornflowerblue;
+}
+.div2{
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 3px dotted seagreen;
+}
+
+.div3{
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px dotted crimson;
+}
+.textAndButton{
+  margin: auto;
+  width: fit-content;
+}
+
+h2{
+  margin-top: 0;
+}
+h1{
+  margin: auto;
+  text-align: center;
+}
+/*.last-child{
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+}*/
