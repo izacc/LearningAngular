@@ -28,6 +28,7 @@ export class ContentListComponent implements OnInit {
     author: 'Izacc Lucas',
     imgUrl: 'https://cdn.britannica.com/s:900x675/09/167709-131-36A6A6E8/butterfly-moth-blue-Lepidoptera-insect.jpg',
     title: 'Item 1',
+    tags: ['Butterfly', 'Leaf', 'Green'],
     type: 'Butterfly',
     body: 'Hello this is item one'
   };
@@ -35,8 +36,9 @@ export class ContentListComponent implements OnInit {
   item2: Content = {
     id: 1,
     author: 'John Smith',
-    imgUrl: 'https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png',
+    imgUrl: '',
     title: 'Item 2',
+    tags: ['Flower', 'Color', 'Green'],
     type: 'Flower',
     body: 'Hello this is item two'
   };
@@ -46,6 +48,7 @@ export class ContentListComponent implements OnInit {
     author: 'Jane Smith',
     imgUrl: 'https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg',
     title: 'Item 3',
+    tags: ['Butterfly', 'Flower', 'Purple'],
     type: 'Butterfly',
     body: 'Hello this is item three'
   };
@@ -55,6 +58,7 @@ export class ContentListComponent implements OnInit {
     author: 'Jane Doe',
     imgUrl: 'https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg',
     title: 'Item 4',
+    tags: ['Star Wars', 'Baby Yoda', 'Tea'],
     type: 'Star Wars',
     body: 'This is baby Yoda'
   };

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import {ContentListComponent, FilterTypePipe} from './content-list/content-list.component';
 import {FormsModule} from '@angular/forms';
+import { HoverStyleDirective } from './hover-style.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentCardComponent,
     ContentListComponent,
-    FilterTypePipe
+    FilterTypePipe,
+    HoverStyleDirective
   ],
   imports: [
     BrowserModule,

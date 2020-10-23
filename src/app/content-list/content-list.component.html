@@ -4,7 +4,6 @@
   <p>{{validity}}</p>
 </div>
 
-
 <h1>Flower</h1>
 <div class="div1" *ngFor='let content of contentList | filterType: "Flower"; let last = last'
      [ngClass]="{'last-child': last}">
@@ -12,14 +11,14 @@
 
   <ul title="Content Items">
 
-      <h1>{{content.title}}</h1>
-      <h2>{{content.author}}</h2>
-      <p>{{content.body}}</p>
-      <p>Tags: {{content.tags}}</p>
+    <h1  class="itemTitle"  appHoverStyle id="title">{{content.title}}</h1>
+    <h2>{{content.author}}</h2>
+    <p>{{content.body}}</p>
+    Tags: <span *ngFor="let tag of content.tags"><i appHoverStyle id='tags'>{{tag}}, </i> </span>
 
       <p> Type: {{content.type}}</p>
       <br>
-      <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <img *ngIf="content.imgUrl !== ''; else imageDefault" src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
 
   </ul>
 
@@ -32,14 +31,14 @@
 
 
   <ul title="Content Items">
-      <h1>{{content.title}}</h1>
-      <h2>{{content.author}}</h2>
-      <p>{{content.body}}</p>
-      <p>Tags: {{content.tags}}</p>
+    <h1  class="itemTitle"  appHoverStyle id="title">{{content.title}}</h1>
+    <h2>{{content.author}}</h2>
+    <p>{{content.body}}</p>
+    Tags: <span *ngFor="let tag of content.tags"><i appHoverStyle id='tags'>{{tag}}, </i> </span>
 
       <p> Type: {{content.type}}</p>
       <br>
-      <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <img *ngIf="content.imgUrl !== ''; else imageDefault" src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
 
   </ul>
 
@@ -53,16 +52,21 @@
 
 
   <ul title="Content Items">
-      <h1>{{content.title}}</h1>
-      <h2>{{content.author}}</h2>
-      <p>{{content.body}}</p>
-      <p>Tags: {{content.tags}}</p>
+    <h1  class="itemTitle"  appHoverStyle id="title">{{content.title}}</h1>
+    <h2>{{content.author}}</h2>
+    <p>{{content.body}}</p>
+    Tags: <span *ngFor="let tag of content.tags"><i appHoverStyle id='tags'>{{tag}}, </i> </span>
+
 
       <p> Type: {{content.type}}</p>
       <br>
-      <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <img *ngIf="content.imgUrl !== ''; else imageDefault" src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
   </ul>
 
 
 </div>
+
+<ng-template #imageDefault>
+  <img src="https://www.tibs.org.tw/images/default.jpg" width="250" height="250"/>
+</ng-template>
 
