@@ -66,6 +66,27 @@
 
 </div>
 
+<h1>Everything</h1>
+<div class="div1" *ngFor='let content of localContentList let last = last'
+     [ngClass]="{'last-child': last}">
+
+
+  <ul title="Content Items">
+
+    <h1  class="itemTitle"  appHoverStyle id="title">{{content.title}}</h1>
+    <h2>{{content.author}}</h2>
+    <p>{{content.body}}</p>
+    Tags: <i appHoverStyle id='tags'>{{content.tags}}</i>
+
+    <p> Type: {{content.type}}</p>
+    <br>
+    <img *ngIf="content.imgUrl !== ''; else imageDefault" src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+
+  </ul>
+
+
+</div>
+
 <ng-template #imageDefault>
   <img src="https://www.tibs.org.tw/images/default.jpg" width="250" height="250"/>
 </ng-template>

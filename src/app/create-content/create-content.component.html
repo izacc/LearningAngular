@@ -7,7 +7,7 @@
   </div>
   <div class="form-section">
     <label for="contentAuthor">Content Author: </label>
-    <input type="text" id="contentAuthor" formControlName="contentId" required>
+    <input type="text" id="contentAuthor" formControlName="contentAuthor" required>
   </div>
   <div class="form-section">
     <label for="contentImgUrl">Content Image: </label>
@@ -30,9 +30,5 @@
     <input type="text" id="contentBody" formControlName="contentBody" required>
   </div>
   <button type="submit">Submit</button>
-
-
-
-
-
+  <p class="error" *ngIf="invalidForm">The Content failed to be added!</p>
 </form>
