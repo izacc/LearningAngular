@@ -5,7 +5,7 @@
 </div>
 
 <h1>Flower</h1>
-<div class="div1" *ngFor='let content of contentList | filterType: "Flower"; let last = last'
+<div class="div1" *ngFor='let content of localContentList | filterType: "Flower"; let last = last'
      [ngClass]="{'last-child': last}">
 
 
@@ -26,7 +26,7 @@
 </div>
 
 <h1>Butterfly</h1>
-<div class="div2" *ngFor='let content of contentList | filterType: "Butterfly"; let last = last'
+<div class="div2" *ngFor='let content of localContentList | filterType: "Butterfly"; let last = last'
      [ngClass]="{'last-child': last}">
 
 
@@ -47,7 +47,7 @@
 
 
 <h1>Star Wars</h1>
-<div class="div3" *ngFor='let content of contentList | filterType: "Star Wars"; let last = last'
+<div class="div3" *ngFor='let content of localContentList | filterType: "Star Wars"; let last = last'
      [ngClass]="{'last-child': last}">
 
 

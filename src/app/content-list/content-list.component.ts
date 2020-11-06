@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from '../helper-files/content-interface';
 import {Pipe, PipeTransform} from '@angular/core';
+import {CreateContentComponent} from '../create-content/create-content.component';
 
 
 @Pipe({name: 'filterType'})
@@ -19,7 +20,8 @@ export class FilterTypePipe implements PipeTransform{
 
 
 export class ContentListComponent implements OnInit {
-  public contentList = new Array <Content>();
+  public static contentList = new Array <Content>();
+  public localContentList = ContentListComponent.contentList
   public title: string;
   public validity = '';
   outputHTML: string;
@@ -72,13 +74,13 @@ export class ContentListComponent implements OnInit {
     body: 'These are tulips(i think)'
   };
   constructor() {
-    this.contentList.push(this.item1, this.item2, this.item3, this.item4, this.item5);
+    ContentListComponent.contentList.push(this.item1, this.item2, this.item3, this.item4, this.item5);
   }
   public idPrint(content: Content): void{
     console.log(content.id);
   }
   public validTitle(title: string): any{
-    if (this.contentList.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
+    if (this.localContentList.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
       this.validity = 'That is a valid title!';
       console.log ('That is a valid title!');
     }else{
