@@ -16,6 +16,7 @@ export class ContentService {
   constructor(private messageService: MessageService, private http: HttpClient) { }
   getContentObs(): Observable<Content[]>{
     this.messageService.add('Content Service: Fetched Content');
+    this.http.get<Content[]>('api/content').subscribe(content => console.log(content));
     return this.http.get<Content[]>('api/content');
   }
 
@@ -23,5 +24,10 @@ export class ContentService {
     return this.http.post<Content>('api/content'
       ,
       content, this.httpOptions);
+  }
+  updateContent(content: Content): Observable<any>{
+    return this.http.put('api/content'
+      , content,
+      this.httpOptions);
   }
 }

@@ -73,7 +73,7 @@ export class CreateComponentComponent implements OnInit {
     );
   }
   // tslint:disable-next-line:typedef
-  save(contentItem: Content){
+  save(contentItem: Content) {
     this.contentService.addContent(contentItem)
       .subscribe(content => this.contentListComp.contentList.push(content));
   }
