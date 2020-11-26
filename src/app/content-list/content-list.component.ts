@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {Content} from '../helper-files/content-interface';
 import {Pipe, PipeTransform} from '@angular/core';
 import {ContentService} from '../services/content.service';
@@ -19,10 +19,11 @@ export class FilterTypePipe implements PipeTransform{
 })
 
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ContentListComponent implements OnInit {
-  public static contentList = new Array <Content>();
-  public contents = ContentListComponent.contentList;
+  public contentList =  new Array <Content>();
   public title: string;
   public validity = '';
   outputHTML: string;
@@ -32,7 +33,7 @@ export class ContentListComponent implements OnInit {
     console.log(content.id);
   }
   public validTitle(title: string): any{
-    if (this.contents.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
+    if (this.contentList.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
       this.validity = 'That is a valid title!';
       console.log ('That is a valid title!');
     }else{
@@ -43,8 +44,11 @@ export class ContentListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.contentService.getContentObs().subscribe(content =>
-      this.contents = content);
+      this.contentList = content);
+    console.log(this.contentList);
+    console.log( this.contentService.getContentObs().subscribe(content => console.log(content)));
   }
+
 
 }
 

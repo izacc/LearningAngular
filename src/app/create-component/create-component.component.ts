@@ -21,7 +21,7 @@ export class CreateComponentComponent implements OnInit {
   public body: string;
   public form: FormGroup;
   public invalidForm: boolean;
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService, private contentListComp: ContentListComponent) {
     this.invalidForm = false;
   }
 
@@ -72,9 +72,11 @@ export class CreateComponentComponent implements OnInit {
       (fail) => console.log(fail)
     );
   }
-  save(contentItem: Content): void {
+  // tslint:disable-next-line:typedef
+  save(contentItem: Content){
     this.contentService.addContent(contentItem)
-      .subscribe(content => ContentListComponent.contentList.push(content));
+      .subscribe(content => this.contentListComp.contentList.push(content));
   }
+
 
 }
