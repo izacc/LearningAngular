@@ -6,13 +6,12 @@ import {Pipe, PipeTransform} from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import {ContentListComponent, FilterTypePipe} from './content-list/content-list.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
 import { CreateComponentComponent } from './create-component/create-component.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +24,8 @@ import { CreateComponentComponent } from './create-component/create-component.co
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false,
         delay: 1000 })

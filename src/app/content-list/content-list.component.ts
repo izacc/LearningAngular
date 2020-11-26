@@ -21,7 +21,8 @@ export class FilterTypePipe implements PipeTransform{
 
 
 export class ContentListComponent implements OnInit {
-  public contentList = new Array <Content>();
+  public static contentList = new Array <Content>();
+  public contents = ContentListComponent.contentList;
   public title: string;
   public validity = '';
   outputHTML: string;
@@ -31,7 +32,7 @@ export class ContentListComponent implements OnInit {
     console.log(content.id);
   }
   public validTitle(title: string): any{
-    if (this.contentList.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
+    if (this.contents.filter(t => t.title.toLowerCase().includes(this.title.toLowerCase())).length !== 0){
       this.validity = 'That is a valid title!';
       console.log ('That is a valid title!');
     }else{
@@ -42,7 +43,7 @@ export class ContentListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.contentService.getContentObs().subscribe(content =>
-      this.contentList = content);
+      this.contents = content);
   }
 
 }

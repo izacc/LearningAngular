@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Content} from './helper-files/content-interface';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
-import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,8 @@ export class InMemoryDataService implements InMemoryDbService{
 
   constructor() { }
 
-  createDb(): Content[]{
+  // tslint:disable-next-line:typedef
+  createDb(){
     const content: Content[] = [{
       id: 0,
       author: 'Izacc Lucas',
@@ -50,9 +50,9 @@ export class InMemoryDataService implements InMemoryDbService{
         type: 'Flower',
         body: 'These are tulips(i think)'
       }];
-    return content;
+    return {content};
   }
-  genId(content: Content[]): number {
+  getId(content: Content[]): number {
     return content.length > 0 ?
       Math.max(...content.map(contents => contents.id)) + 1
       : 2000;

@@ -6,7 +6,7 @@
 
 
 <h1>Flower</h1>
-<div class="div1" *ngFor='let content of contentList | filterType: "Flower"; let last = last'
+<div class="div1" *ngFor='let content of contents | filterType: "Flower"; let last = last'
      [ngClass]="{'last-child': last}">
 
 
@@ -27,7 +27,7 @@
 </div>
 
 <h1>Butterfly</h1>
-<div class="div2" *ngFor='let content of contentList | filterType: "Butterfly"; let last = last'
+<div class="div2" *ngFor='let content of contents | filterType: "Butterfly"; let last = last'
      [ngClass]="{'last-child': last}">
 
 
@@ -48,7 +48,7 @@
 
 
 <h1>Star Wars</h1>
-<div class="div3" *ngFor='let content of contentList | filterType: "Star Wars"; let last = last'
+<div class="div3" *ngFor='let content of contents | filterType: "Star Wars"; let last = last'
      [ngClass]="{'last-child': last}">
 
 
@@ -61,6 +61,25 @@
       <p> Type: {{content.type}}</p>
       <br>
       <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+  </ul>
+
+
+</div>
+
+<h1>All Contents</h1>
+<div class="div1" *ngFor='let content of contents let last = last'
+     [ngClass]="{'last-child': last}">
+
+
+  <ul title="Content Items">
+    <h1>{{content.title}}</h1>
+    <h2>{{content.author}}</h2>
+    <p>{{content.body}}</p>
+    <p>Tags: {{content.tags}}</p>
+
+    <p> Type: {{content.type}}</p>
+    <br>
+    <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
   </ul>
 
 

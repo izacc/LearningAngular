@@ -3,11 +3,13 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Content} from '../helper-files/content-interface';
 import {ContentListComponent} from '../content-list/content-list.component';
 import {error} from '@angular/compiler/src/util';
+import {ContentService} from '../services/content.service';
+
 
 @Component({
-  selector: 'app-create-content',
-  templateUrl: './create-content.component.html',
-  styleUrls: ['./create-content.component.css']
+  selector: 'app-create-component',
+  templateUrl: './create-component.component.html',
+  styleUrls: ['./create-component.component.css']
 })
 export class CreateComponentComponent implements OnInit {
   public id: number;
@@ -19,7 +21,7 @@ export class CreateComponentComponent implements OnInit {
   public body: string;
   public form: FormGroup;
   public invalidForm: boolean;
-  constructor() {
+  constructor(private contentService: ContentService) {
     this.invalidForm = false;
   }
 
@@ -51,7 +53,7 @@ export class CreateComponentComponent implements OnInit {
         };
         success(`The Content ${this.form.value.contentTitle} has been successfully added`);
         this.invalidForm = false;
-        // ContentListComponent.contentList.push(contentItem);
+        this.save(contentItem);
         this.Clear();
       } else {
         console.log(this.form.get('contentId').status);
@@ -69,6 +71,10 @@ export class CreateComponentComponent implements OnInit {
       (success) => console.log(success),
       (fail) => console.log(fail)
     );
+  }
+  save(contentItem: Content): void {
+    this.contentService.addContent(contentItem)
+      .subscribe(content => ContentListComponent.contentList.push(content));
   }
 
 }
