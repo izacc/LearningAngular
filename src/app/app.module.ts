@@ -8,6 +8,9 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import {ContentListComponent, FilterTypePipe} from './content-list/content-list.component';
 import {FormsModule} from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false,
+        delay: 1000 })
   ],
   providers: [],
   bootstrap: [AppComponent]
