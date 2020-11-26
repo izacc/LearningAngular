@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
+import { CreateComponentComponent } from './create-component/create-component.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {InMemoryDataService} from './in-memory-data.service';
     ContentCardComponent,
     ContentListComponent,
     FilterTypePipe,
-    MessagesComponent
+    MessagesComponent,
+    CreateComponentComponent
   ],
   imports: [
     BrowserModule,
