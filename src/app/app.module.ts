@@ -11,7 +11,13 @@ import { MessagesComponent } from './messages/messages.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
-import { CreateComponentComponent } from './create-component/create-component.component';
+import {CreateComponentComponent, CreateStartComponentComponent} from './create-component/create-component.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +25,8 @@ import { CreateComponentComponent } from './create-component/create-component.co
     ContentListComponent,
     FilterTypePipe,
     MessagesComponent,
-    CreateComponentComponent
+    CreateComponentComponent,
+    CreateStartComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,12 @@ import { CreateComponentComponent } from './create-component/create-component.co
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false,
-        delay: 1000 })
+        delay: 1000 }),
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    NoopAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

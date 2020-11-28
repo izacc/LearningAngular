@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -124,5 +125,10 @@
   "defaultProject": "LearningAngular",
   "cli": {
     "analytics": "c0c6484c-d6ac-4be2-bfd8-22ca2643d382"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

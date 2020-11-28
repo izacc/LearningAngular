@@ -1,34 +1,33 @@
 <h1>Create Content</h1>
 <form (ngSubmit)="onSubmit()" [formGroup]="form" id="createContentForm">
-
-  <div class="form-section">
-    <label for="contentId">Content Id: </label>
-    <input type="number" id="contentId" formControlName="contentId" required>
-  </div>
-  <div class="form-section">
-    <label for="contentAuthor">Content Author: </label>
-    <input type="text" id="contentAuthor" formControlName="contentAuthor" required>
-  </div>
-  <div class="form-section">
-    <label for="contentImgUrl">Content Image: </label>
-    <input type="text" id="contentImgUrl" formControlName="contentImgUrl" required>
-  </div>
-  <div class="form-section">
-    <label for="contentTitle">Content Title: </label>
-    <input type="text" id="contentTitle" formControlName="contentTitle" required>
-  </div>
-  <div class="form-section">
-    <label for="contentTags">Content Tags: </label>
-    <input type="text" id="contentTags" formControlName="contentTags">
-  </div>
-  <div class="form-section">
-    <label for="contentType">Content Type: </label>
-    <input type="text" id="contentType" formControlName="contentType" required>
-  </div>
-  <div class="form-section">
-    <label for="contentBody">Content Body: </label>
-    <input type="text" id="contentBody" formControlName="contentBody" required>
-  </div>
-  <button type="submit">Submit</button>
+  <mat-form-field class="form-section">
+    <mat-label for="contentId">Content Id: </mat-label>
+    <input matInput type="number" id="contentId" formControlName="contentId" required>
+  </mat-form-field>
+  <mat-form-field class="form-section" >
+    <mat-label for="contentAuthor">Content Author: </mat-label>
+    <input matInput type="text" id="contentAuthor" formControlName="contentAuthor" required>
+  </mat-form-field>
+  <mat-form-field class="form-section">
+    <mat-label for="contentImgUrl">Content Image: </mat-label>
+    <input matInput type="text" id="contentImgUrl" formControlName="contentImgUrl" required>
+  </mat-form-field>
+  <mat-form-field class="form-section">
+    <mat-label for="contentTitle">Content Title: </mat-label>
+    <input matInput type="text" id="contentTitle" formControlName="contentTitle" required>
+  </mat-form-field>
+  <mat-form-field class="form-section">
+    <mat-label for="contentTags">Content Tags: </mat-label>
+    <input matInput type="text" id="contentTags" formControlName="contentTags">
+  </mat-form-field>
+  <mat-form-field class="form-section">
+    <mat-label for="contentType">Content Type: </mat-label>
+    <input matInput type="text" id="contentType" formControlName="contentType" required>
+  </mat-form-field>
+  <mat-form-field class="form-section">
+    <mat-label for="contentBody">Content Body: </mat-label>
+    <input matInput type="text" id="contentBody" formControlName="contentBody" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
   <p class="error" *ngIf="invalidForm">The Content failed to be added!</p>
 </form>
