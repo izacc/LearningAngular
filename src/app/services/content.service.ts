@@ -19,7 +19,9 @@ export class ContentService {
     this.http.get<Content[]>('api/content').subscribe(content => console.log(content));
     return this.http.get<Content[]>('api/content');
   }
-
+  getContentObject(id: number): Observable<Content>{
+    return this.http.get<Content>('api/content/' + id);
+  }
   addContent(content: Content): Observable<Content>{
     return this.http.post<Content>('api/content'
       ,

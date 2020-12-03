@@ -1,1 +1,21 @@
-<p>content-detail works!</p>
+<div>
+
+    <img *ngIf="content.imgUrl !== '';" src={{content.imgUrl}} width="250" height="250"/>
+    <span>
+      <h1  class="itemTitle"  id="title">Title: {{content.title}}</h1>
+      <br>
+      <h2>Author: {{content.author}}</h2>
+      <br>
+      <p>Body: {{content.body}}</p>
+      <br>
+      <p>Tags: <i>{{content.tags}}</i></p>
+      <br>
+
+      <p> Type: {{content.type}}</p>
+    </span>
+    <br>
+
+    <br>
+    <a [routerLink]="['/content',content.id]"
+       routerLinkActive="active">Content Detail</a><br>
+</div>
