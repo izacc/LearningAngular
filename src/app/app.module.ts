@@ -17,6 +17,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     FilterTypePipe,
     MessagesComponent,
     CreateComponentComponent,
-    CreateStartComponentComponent
+    CreateStartComponentComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,16 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatFormFieldModule,
     NoopAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      { path: 'content/:id'
+        , component: ContentDetailComponent
+      },
+      { path: 'content'
+        , component: ContentListComponent },
+      { path: '**'
+        , component: NotFoundComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

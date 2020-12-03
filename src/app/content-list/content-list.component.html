@@ -20,6 +20,9 @@
       <p> Type: {{content.type}}</p>
       <br>
       <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <br>
+      <a [routerLink]="['/content',content.id]"
+       routerLinkActive="active">Content Detail</a><br>
 
   </ul>
 
@@ -40,7 +43,9 @@
       <p> Type: {{content.type}}</p>
       <br>
       <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
-
+    <br>
+    <a [routerLink]="['/content',content.id]"
+       routerLinkActive="active">Content Detail</a><br>
   </ul>
 
 
@@ -61,6 +66,9 @@
       <p> Type: {{content.type}}</p>
       <br>
       <img src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <br>
+    <a [routerLink]="['/content',content.id]"
+       routerLinkActive="active">Content Detail</a><br>
   </ul>
 
 
@@ -80,6 +88,9 @@
     <p> Type: {{content.type}}</p>
     <br>
     <img *ngIf="content.imgUrl !== ''; else imageDefault" src={{content.imgUrl}} width="250" height="250" (click)="this.idPrint(content)"/>
+    <br>
+    <a [routerLink]="['/content',content.id]"
+       routerLinkActive="active">Content Detail</a><br>
 
   </ul>
 
